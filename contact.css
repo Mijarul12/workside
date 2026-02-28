@@ -1,0 +1,134 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #fff; /* White text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a192f; /* Navy blue background */
+}
+
+/* Main container with a modern, dark theme */
+.contact-container {
+    max-width: 950px;
+    width: 100%;
+    padding: 50px;
+    background: #112240; /* Slightly lighter navy for the container */
+    border-radius: 15px;
+    border: 1px solid #233554;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    color: #ccd6f6; /* Lighter text color for headings */
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Flex container for form and details */
+.contact-content {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* Form and Company Details Sections */
+.contact-form,
+.company-details {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #8892b0; /* A softer white for labels */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #233554;
+    border-radius: 8px;
+    background: #112240; /* Same as container background */
+    color: #ccd6f6; /* Light text for input */
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #8892b0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #64ffda; /* A bright accent color for focus */
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
+}
+
+/* Send Message Button */
+button[type="submit"] {
+    background: transparent;
+    color: #64ffda; /* Accent color for text */
+    padding: 15px 30px;
+    border: 1px solid #64ffda; /* Accent color border */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(100, 255, 218, 0.1); /* Slight background on hover */
+    transform: translateY(-2px);
+}
+
+/* Company Details Section */
+.company-details {
+    padding: 30px;
+    background: transparent;
+    border-radius: 15px;
+}
+
+.company-details h2 {
+    color: #ccd6f6;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #233554;
+    padding-bottom: 10px;
+}
+
+.company-details p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #8892b0;
+}
+
+.company-details strong {
+    color: #ccd6f6;
+}
+
+/* Responsive Design */
+@media (max-width: 850px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        padding: 30px;
+    }
+}

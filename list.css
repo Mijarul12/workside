@@ -1,0 +1,53 @@
+.project-list-container {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.project-table th,
+.project-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-table th {
+    background-color: #f2f2f2;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accept-btn:hover {
+    background-color: #45a049;
+}
+
+.accept-btn.pending {
+    background-color: #ff9800;
+    cursor: not-allowed;
+}
+
+.download-answer-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.download-answer-btn img, 
+.project-table td a img {
+    width: 24px;
+    height: 24px;
+}

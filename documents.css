@@ -1,0 +1,129 @@
+/* Documents Page Specific Styles */
+.documents-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.documents-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.documents-container p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Upload Form */
+.upload-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+#upload-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#upload-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+#upload-form input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Custom File Input */
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.8rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-input-label {
+    color: #888;
+    font-style: italic;
+}
+
+.upload-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: linear-gradient(to right, #005bb5, #0099cc);
+}
+
+/* Uploaded Files List */
+.uploaded-files {
+    margin-top: 2rem;
+}
+
+.uploaded-files h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#file-list li {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+#file-list li .status {
+    font-style: italic;
+    color: #ff8c00; /* Orange for 'Pending' */
+}

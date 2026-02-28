@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Portal - Work Side</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="top-nav-bar">
+        <a href="login.html" class="nav-btn">Student Login</a>
+        <a href="worker_login.html" class="nav-btn active">Worker Login</a>
+        <a href="admin_login.html" class="nav-btn">Admin Login</a>
+    </div>
+    <div class="background-container">
+        <div class="left-bg"></div>
+        <div class="right-bg"></div>
+    </div>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <div class="login-header-image">
+            </div>
+            <div class="login-body">
+                <div class="title-container">
+                    <img src="logo.png" alt="Work Side Logo" class="logo">
+                    <div class="title-text">
+                        <p><strong>WORK SIDE</strong></p>
+                        <p class="student-portal">WORKER PORTAL</p>
+                    </div>
+                </div>
+
+                <div class="welcome-text">
+                  <h2>Welcome Back!</h2>
+                  <p>Let's get to work.</p>
+                </div>
+
+                <img src="onboard.png" alt="Illustration of a person using a laptop" class="main-illustration">
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email / Username</label>
+                        <div class="input-with-icon">
+                           <i class="fa-regular fa-user"></i>
+                           <input type="email" id="email" placeholder="Example: worker@workside.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                         <div class="input-with-icon">
+                           <i class="fa-solid fa-lock"></i>
+                           <input type="password" id="password" placeholder="Enter Password" required>
+                           <i class="fa-regular fa-eye-slash toggle-password"></i>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-now-btn">LOGIN NOW</button>
+                </form>
+
+                 <div class="footer-text">
+                   <a href="#">Terms & Conditions</a>
+                   <p class="powered-by">Secure Login. Powered by Work Side Company.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

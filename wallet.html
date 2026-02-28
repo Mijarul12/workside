@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Work Side</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="wallet.css">
+</head>
+<body>
+    <header>
+        <p>Welcome to worksite... Student Portal</p>
+        <nav>
+            <a href="dashboard.html">Home</a>
+            <a href="list.html">List</a>
+            <a href="documents.html">Documents</a>
+            <a href="account.html">Account</a>
+            <a href="wallet.html" class="active">Wallet</a>
+            <a href="#" class="logout-btn"><img src="https://img.icons8.com/ios-filled/50/ff0000/shutdown.png" alt="Logout"></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="wallet-container">
+            <h1>My Wallet</h1>
+            <div class="wallet-balance">
+                <p>Current Balance</p>
+                <h2 id="wallet-amount">₹0.00</h2>
+            </div>
+
+            <div class="add-money-section">
+                <h3>Add Money to Wallet</h3>
+                <form id="add-money-form">
+                    <div class="form-group">
+                        <label for="amount-to-add">Amount (₹)</label>
+                        <input type="number" id="amount-to-add" placeholder="Enter amount" min="1" required>
+                    </div>
+                    <button type="submit" class="add-money-btn">Add Money</button>
+                </form>
+            </div>
+
+            <div class="transaction-history">
+                <h3>Recent Transactions</h3>
+                <ul id="transaction-list">
+                    <!-- Transactions will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="terms.html">Term & Condition</a>
+        <p>&copy; 2026 Work Side. All Rights Reserved.</p>
+    </footer>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="wallet.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Account Page Specific Styles */
+.account-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.account-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Account Details & Password Sections */
+.account-details, .password-change-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.account-details h2, .password-change-section h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.account-details p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.account-details p strong {
+    color: #333;
+}
+
+/* Password Change Form */
+#password-change-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#password-change-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+#password-change-form input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.change-password-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.change-password-btn:hover {
+    background: linear-gradient(to right, #005bb5, #0099cc);
+}

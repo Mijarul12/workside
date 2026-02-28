@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wallet - Worker Portal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="worker_wallet.css">
+</head>
+<body>
+    <header>
+        <p>Welcome to worksite... Worker Portal</p>
+        <nav>
+            <a href="worker_dashboard.html">Home</a>
+            <a href="list.html">List</a>
+            <a href="worker_wallet.html" class="active">Wallet</a>
+            <a href="upload.html">Upload</a>
+            <a href="login.html" class="logout-btn"><img src="https://img.icons8.com/ios-filled/50/ff0000/shutdown.png" alt="Logout"></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="wallet-container">
+            <h1>My Earnings</h1>
+            <div class="balance-overview">
+                <div class="balance-card pending-balance">
+                    <p>Pending Balance</p>
+                    <h2 id="pending-amount">₹0.00</h2>
+                    <span>Awaiting client approval</span>
+                </div>
+                <div class="balance-card withdrawable-balance">
+                    <p>Withdrawable Balance</p>
+                    <h2 id="withdrawable-amount">₹0.00</h2>
+                    <span>Ready for withdrawal</span>
+                </div>
+            </div>
+
+            <div class="withdrawal-section">
+                <h3>Withdraw Funds</h3>
+                <p class="withdrawal-info">You can request a withdrawal once your withdrawable balance reaches ₹1,499. Requests are processed within 7 working days.</p>
+                <button id="withdraw-btn" class="withdraw-money-btn" disabled>Request Withdrawal</button>
+            </div>
+
+            <div class="transaction-history">
+                <h3>Earnings & Withdrawal History</h3>
+                <ul id="transaction-list">
+                    <!-- Transactions will be dynamically inserted here by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="terms.html">Term & Condition</a>
+        <p>&copy; 2026 Work Side. All Rights Reserved.</p>
+    </footer>
+    <script src="worker_wallet.js"></script>
+</body>
+</html>
