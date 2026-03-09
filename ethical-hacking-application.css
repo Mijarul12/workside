@@ -1,0 +1,138 @@
+/* Ethical Hacking Application Form Styles */
+body {
+    font-family: 'Orbitron', sans-serif; /* Techy font */
+    background-color: #0d0d0d; /* Dark background */
+    color: #0f0; /* Green text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    background: #1a1a1a;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.2);
+    width: 100%;
+    max-width: 950px;
+    padding: 50px;
+    border: 1px solid #0f0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.header h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #0f0;
+}
+
+.header .subtitle {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #0f0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #0f0;
+    background-color: #111;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0f0;
+    background-color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Radio Button Styling */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #0f0;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Date picker */
+#dob {
+    cursor: pointer;
+}
+
+#pay-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000;
+    border: 1px solid #0f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gradient-btn {
+    background: linear-gradient(45deg, #0f0, #00ff00);
+}
+
+#pay-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 255, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .form-container { padding: 30px; }
+    .header h2 { font-size: 2em; }
+}

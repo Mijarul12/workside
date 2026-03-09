@@ -1,70 +1,76 @@
-// --- Login Logic ---
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.querySelector('.toggle-password');
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+    const handleLogin = (userType) => {
+        const email = emailInput.value.toLowerCase();
+        const password = passwordInput.value;
+        const deletedEmails = JSON.parse(localStorage.getItem('deletedEmails')) || [];
+        const deletedStudentEmails = JSON.parse(localStorage.getItem('deletedStudentEmails')) || [];
 
-            const emailInput = document.getElementById('email');
-            const passwordInput = document.getElementById('password');
-            const deletedEmails = JSON.parse(localStorage.getItem('deletedEmails')) || [];
-            const deletedStudentEmails = JSON.parse(localStorage.getItem('deletedStudentEmails')) || [];
+        if (deletedEmails.includes(email) || deletedStudentEmails.includes(email)) {
+            alert('This user has been deleted and cannot log in.');
+            return;
+        }
 
-            if (emailInput && passwordInput) {
-                const email = emailInput.value.toLowerCase();
-                const password = passwordInput.value;
-
-                if (deletedEmails.includes(email) || deletedStudentEmails.includes(email)) {
-                    alert('This user has been deleted and cannot log in.');
-                    return;
-                }
-
-                // Check for admin credentials
-                if (email === 'admin@gmail.com' && password === 'Admin123') {
-                    window.location.href = 'admin_dashboard.html';
-                    return;
-                }
-
-                // Check for dynamically created students
+        switch (userType) {
+            case 'student':
                 const students = JSON.parse(localStorage.getItem('students')) || [];
                 const student = students.find(s => s.email.toLowerCase() === email && s.password === password);
-
                 if (student) {
                     window.location.href = 'dashboard.html';
-                    return;
+                } else {
+                    alert('Invalid student email or password.');
                 }
+                break;
 
-                // Check for dynamically created workers
+            case 'worker':
                 const workers = JSON.parse(localStorage.getItem('workers')) || [];
                 const worker = workers.find(w => w.email.toLowerCase() === email && w.password === password);
-
                 if (worker) {
                     window.location.href = 'worker_dashboard.html';
-                    return;
+                } else {
+                    alert('Invalid worker email or password.');
                 }
+                break;
 
-                // Fallback for hardcoded student/worker (optional, can be removed)
-                if (email === 'student@gmail.com' && password === 'Student123') {
-                    window.location.href = 'dashboard.html';
-                    return;
-                } 
+            case 'admin':
+                if (email === 'admin@gmail.com' && password === 'Admin123') {
+                    window.location.href = 'admin_dashboard.html';
+                } else {
+                    alert('Invalid admin email or password.');
+                }
+                break;
 
-                alert('Invalid email or password. Please try again.');
+            default:
+                alert('Invalid login type specified.');
+                break;
+        }
+    };
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const path = window.location.pathname;
+
+            if (path.includes('worker_login.html')) {
+                handleLogin('worker');
+            } else if (path.includes('admin_login.html')) {
+                handleLogin('admin');
+            } else {
+                handleLogin('student');
             }
         });
     }
 
-    // --- Password Toggle ---
-    const togglePassword = document.querySelector('.toggle-password');
-    const passwordInput = document.getElementById('password');
-
     if (togglePassword && passwordInput) {
-        togglePassword.addEventListener('click', function (e) {
+        togglePassword.addEventListener('click', function () {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');
+            this.classList.toggle('fa-eye');
         });
     }
 });

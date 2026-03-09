@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Registration - Work Side</title>
+    <link rel="stylesheet" href="agreement.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GST Registration</h1>
+        <p>Goods and Services Tax (GST) is an indirect tax used in India on the supply of goods and services. GST Registration is mandatory for businesses exceeding a certain turnover. Our experts will guide you through the registration process and ensure compliance.</p>
+        
+        <div class="requirements">
+            <h2>GST Registration Requirements</h2>
+
+            <h3>1. Common Documents (Required for All)</h3>
+            <p>Regardless of the business type, you must have:</p>
+            <ul>
+                <li><strong>PAN Card:</strong> PAN Card of the Business or Proprietor.</li>
+                <li><strong>Aadhaar Card:</strong> Aadhaar Card of the Primary Authorized Signatory.</li>
+                <li><strong>Photograph:</strong> Photograph of the Owner/Partners/Directors (JPEG format, max size 100 KB).</li>
+                <li><strong>Bank Account Details:</strong> A cancelled cheque, or the first page of a passbook/bank statement showing the account holder's name and IFSC code.</li>
+                <li><strong>Valid Email & Mobile Number:</strong> For OTP verification.</li>
+            </ul>
+
+            <h3>2. Proof of Place of Business</h3>
+            <p>You must provide proof for your principal place of business:</p>
+            <ul>
+                <li><strong>If Owned:</strong> Latest Property Tax Receipt, Municipal Khata copy, or an Electricity Bill.</li>
+                <li><strong>If Rented / Leased:</strong> A valid Rent/Lease Agreement, along with an Electricity Bill or Property Tax Receipt of the landlord.</li>
+                <li><strong>If Shared / No Agreement:</strong> A No Objection Certificate (NOC) from the property owner, along with their Electricity Bill.</li>
+            </ul>
+
+            <h3>3. Entity-Specific Documents</h3>
+            <h4>A. Sole Proprietorship</h4>
+            <ul>
+                <li>Owner's PAN and Aadhaar.</li>
+                <li>Owner's Photograph.</li>
+                <li>Address Proof (as listed above).</li>
+            </ul>
+            <h4>B. Partnership Firm / LLP</h4>
+            <ul>
+                <li>Partnership Deed.</li>
+                <li>PAN Card of the Firm.</li>
+                <li>Photos of all Partners.</li>
+                <li>Proof of Appointment of Authorized Signatory (Letter of Authorization).</li>
+                <li>LLP Registration Certificate (for LLPs only).</li>
+            </ul>
+            <h4>C. Private Limited Company / OPC</h4>
+            <ul>
+                <li>Certificate of Incorporation (COI) from MCA.</li>
+                <li>PAN Card of the Company.</li>
+                <li>Board Resolution appointing the Authorized Signatory.</li>
+                <li>Photos of all Directors.</li>
+            </ul>
+
+            <h3>4. Checklist for Digital Uploads</h3>
+            <p>Ensure your files meet these criteria before starting:</p>
+            <ul>
+                <li><strong>Format:</strong> JPEG or PDF.</li>
+                <li><strong>Photo Size:</strong> Less than 100 KB.</li>
+                <li><strong>Other Documents Size:</strong> Less than 1 MB per document.</li>
+                <li><strong>Digital Signature (DSC):</strong> Mandatory for Companies and LLPs. Proprietors and Partnerships can use E-Sign with an Aadhaar OTP.</li>
+            </ul>
+            <div class="notes">
+                <p><strong>Important Note:</strong> If you have already registered for Udyam (MSME), you can use those details to ensure your business name and address match perfectly across both government databases. This reduces the chances of your GST application being rejected.</p>
+            </div>
+        </div>
+
+        <div class="agreement">
+            <input type="checkbox" id="agree-checkbox">
+            <label for="agree-checkbox">I agree to the terms and conditions. I understand that the fee of Rs-499/- is non-refundable.</label>
+        </div>
+        <button id="pay-btn" class="blinking-btn" data-plan="GST Registration" data-amount="499" data-redirect-url="https://forms.gle/WiZGBXxAQHLDADHz5" disabled>Pay & Continue</button>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="agreement.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITR Filing - Work Side</title>
+    <link rel="stylesheet" href="agreement.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ITR Filing</h1>
+        <p>Income Tax Return (ITR) is a form used to file information about your income and tax to the Income Tax Department. It is mandatory for individuals and businesses to file ITR if their income exceeds a certain threshold. Our experts help you file your ITR correctly and on time.</p>
+        
+        <h2>Required Documents for ITR Filing</h2>
+        <p>Filing your Income Tax Return (ITR) requires different documents depending on whether you are a salaried individual, a business owner, or a freelancer.</p>
+        <p>Here is a comprehensive checklist to ensure you have everything ready before the deadline.</p>
+
+        <h3>1. Essential Personal Documents</h3>
+        <p>These are mandatory for every taxpayer:</p>
+        <ul>
+            <li><strong>PAN Card:</strong> Your Permanent Account Number.</li>
+            <li><strong>Aadhaar Card:</strong> Must be linked with your PAN to file successfully.</li>
+            <li><strong>Bank Account Details:</strong> You need the Account Number and IFSC Code for all active bank accounts. (One must be selected for your refund).</li>
+        </ul>
+
+        <h3>2. For Salaried Individuals</h3>
+        <p>If you earn a salary, your employer is your primary source of documentation:</p>
+        <ul>
+            <li><strong>Form 16:</strong> This is the most important document. It is a certificate issued by your employer showing your total salary and the TDS (Tax Deducted at Source).</li>
+            <li><strong>Monthly Salary Slips:</strong> Useful to verify allowances like HRA, LTA, etc.</li>
+            <li><strong>Rent Receipts:</strong> If you stay in a rented house and want to claim HRA tax exemption.</li>
+        </ul>
+
+        <h3>3. Financial Statements (Income from Other Sources)</h3>
+        <ul>
+            <li><strong>Bank Passbook/Statement:</strong> To calculate interest earned on Savings Accounts.</li>
+            <li><strong>Interest Certificates:</strong> From banks or post offices for Fixed Deposits (FDs).</li>
+            <li><strong>Form 26AS & AIS (Annual Information Statement):</strong> You can download these from the IT portal. They show all tax deducted on your behalf by banks, employers, or clients.</li>
+        </ul>
+
+        <h3>4. Investment Proofs (For Deductions under Section 80C to 80U)</h3>
+        <p>If you want to reduce your tax liability under the Old Tax Regime, you need:</p>
+        <ul>
+            <li>Life Insurance (LIC) Premium receipts.</li>
+            <li>Public Provident Fund (PPF) passbook entries.</li>
+            <li>ELSS (Mutual Funds) investment statements.</li>
+            <li>Health Insurance Premium (Section 80D) receipts for self and parents.</li>
+            <li>Home Loan Interest Certificate: Issued by the bank (Section 24).</li>
+            <li>Education Loan Interest certificates.</li>
+            <li>Donation Receipts: For Section 80G claims.</li>
+        </ul>
+
+        <h3>5. For Business Owners & Professionals (ITR-3 or ITR-4)</h3>
+        <p>If you are running a shop or working as a freelancer:</p>
+        <ul>
+            <li>Profit & Loss Statement and Balance Sheet.</li>
+            <li>GST Turnover: Your total sales as per GST returns.</li>
+            <li>Cash Position: Closing cash-in-hand and bank balances.</li>
+            <li>Invoices & Expense Receipts: For rent, electricity, staff salary, and marketing.</li>
+        </ul>
+
+        <h3>6. Capital Gains (Stocks & Property)</h3>
+        <ul>
+            <li><strong>Consolidated Tax Report:</strong> If you trade in the stock market (available from Zerodha, Upstox, etc.).</li>
+            <li><strong>Property Sale Deed:</strong> If you sold land or a house during the year (includes purchase price, sale price, and registration costs).</li>
+        </ul>
+
+        <h3>Important Dates to Remember</h3>
+        <ul>
+            <li><strong>Salaried/Individuals:</strong> Usually July 31st of the assessment year.</li>
+            <li><strong>Businesses (Audit cases):</strong> Usually October 31st.</li>
+        </ul>
+
+        <div class="agreement">
+            <input type="checkbox" id="agree-checkbox">
+            <label for="agree-checkbox">I agree to the terms and conditions. I understand that the fee of Rs-1999/- is non-refundable.</label>
+        </div>
+        <button id="pay-btn" class="blinking-btn" data-plan="ITR Filing" data-amount="1999" disabled>Pay & Continue</button>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="agreement.js"></script>
+    <script src="razorpay.js"></script>
+</body>
+</html>

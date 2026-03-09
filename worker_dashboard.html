@@ -3,42 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worker Dashboard - Work Side</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="worker_dashboard.css">
+    <title>Worker Pro Dashboard</title>
+    <link rel="stylesheet" href="worker_create.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <p>Welcome to worksite... Worker Portal</p>
-        <nav>
-            <a href="worker_dashboard.html" class="active">Home</a>
-            <a href="list.html">List</a>
-            <a href="worker_wallet.html">Wallet</a>
-            <a href="upload.html">Upload</a>
-            <a href="login.html" class="logout-btn"><img src="https://img.icons8.com/ios-filled/50/ff0000/shutdown.png" alt="Logout"></a>
-        </nav>
-    </header>
-
-    <main>
-        <div class="dashboard-grid">
-            <a href="list.html" class="dashboard-item">
-                <img src="https.img.icons8.com/color/96/000000/database.png" alt="List Icon">
-                <span>LIST</span>
-            </a>
-            <a href="worker_wallet.html" class="dashboard-item">
-                <img src="https-img.icons8.com/color/96/000000/wallet.png" alt="Wallet Icon">
-                <span>WALLET</span>
-            </a>
-            <a href="upload.html" class="dashboard-item">
-                <img src="https.img.icons8.com/color/96/000000/upload.png" alt="Upload Icon">
-                <span>UPLOAD</span>
-            </a>
-        </div>
-    </main>
-
-    <footer>
-        <a href="terms.html">Term & Condition</a>
-        <p>&copy; 2026 Work Side. All Rights Reserved.</p>
-    </footer>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">WORK<span>FLOW</span></div>
+            <nav>
+                <ul>
+                    <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+                    <li><i class="fas fa-tasks"></i> My Tasks</li>
+                    <li><i class="fas fa-calendar-alt"></i> Schedule</li>
+                    <li><i class="fas fa-chart-line"></i> Performance</li>
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Welcome Back, Worker!</h1>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-envelope"></i>
+                    <img src="https://i.pravatar.cc/40" alt="User Avatar">
+                </div>
+            </header>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>125</h3>
+                        <p>Tasks Finished</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>280</h3>
+                        <p>Total Hours</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-rocket"></i>
+                    <div>
+                        <h3>92%</h3>
+                        <p>Efficiency</p>
+                    </div>
+                </div>
+                <div class="stat-card blue">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h3>4.8</h3>
+                        <p>Rating</p>
+                    </div>
+                </div>
+            </div>
+            <section class="task-section">
+                <h2>Current Projects</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Assigned by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Website Redesign</td>
+                            <td>2024-08-15</td>
+                            <td><span class="status-tag active">Active</span></td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div style="width: 75%;"></div>
+                                </div>
+                            </td>
+                            <td>Jane Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App UI</td>
+                            <td>2024-09-01</td>
+                            <td><span class="status-tag active">Active</span></td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div style="width: 40%;"></div>
+                                </div>
+                            </td>
+                            <td>John Smith</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Campaign</td>
+                            <td>2024-07-30</td>
+                            <td><span class="status-tag pending">Pending</span></td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div style="width: 10%;"></div>
+                                </div>
+                            </td>
+                            <td>Alice Johnson</td>
+                        </tr>
+                        <tr>
+                            <td>API Integration</td>
+                            <td>2024-08-20</td>
+                            <td><span class="status-tag active">Active</span></td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div style="width: 60%;"></div>
+                                </div>
+                            </td>
+                            <td>Mike Brown</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

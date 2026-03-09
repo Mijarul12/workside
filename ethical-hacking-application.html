@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Hacking Course Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="ethical-hacking-application.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h2>Ethical Hacking Course Application</h2>
+            <p class="subtitle">Enroll in our 1-Year advanced diploma course.</p>
+        </div>
+
+        <form id="hacking-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., Alex Rider" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" id="dob" name="dob" placeholder="Select your date of birth" required>
+                </div>
+                 <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., 9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="e.g., alex.rider@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="father-name">Father's Name</label>
+                    <input type="text" id="father-name" name="father-name" placeholder="e.g., Ian Rider" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" placeholder="123 Main St, Anytown, State, 12345" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Enrollment Type</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="enrollment-type" value="regular" checked> Regular</label>
+                        <label><input type="radio" name="enrollment-type" value="unregular"> Unregular</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="school-name">Last/Current School or College</label>
+                    <input type="text" id="school-name" name="school-name" placeholder="e.g., Anytown University" required>
+                </div>
+                <div class="form-group">
+                    <label>Prior Computer Knowledge?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="computer-knowledge" value="yes" checked> Yes</label>
+                        <label><input type="radio" name="computer-knowledge" value="no"> No</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="pay-btn" class="gradient-btn">Pay & Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="ethical-hacking-application.js"></script>
+</body>
+</html>
