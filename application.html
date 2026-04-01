@@ -1,185 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Form</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="application.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-
-<div class="form-container">
-    <div class="progress-container">
-        <div class="progress" id="progress"></div>
-        <div class="circle active">1</div>
-        <div class="circle">2</div>
-        <div class="circle">3</div>
-    </div>
-
-    <form id="multiStepForm">
-        <div class="form-step active" id="step1">
-            <h2>Step 1: Contact Details</h2>
+    <div class="form-container">
+        <form id="registrationForm">
+            <h2>Registration</h2>
             <div class="input-group">
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" placeholder="John Doe" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Mobile Number</label>
+                <input type="tel" id="phone" placeholder="+91 XXXXX-XXXXX" required>
             </div>
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" placeholder="name@email.com" required>
             </div>
             <div class="input-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+91 XXXXX-XXXXX" required>
+                <label for="aadhar">Aadhar Number</label>
+                <input type="text" id="aadhar" placeholder="XXXX XXXX XXXX" required>
             </div>
             <div class="input-group">
-                <label for="village">Village/Locality</label>
-                <input type="text" id="village" placeholder="e.g., Rampur / Sector 12" required>
+                <label for="referCode">Refer Code (Optional)</label>
+                <input type="text" id="referCode" placeholder="Enter referral code">
             </div>
-            <div class="input-group">
-                <label for="postOffice">Post Office (P.O.)</label>
-                <input type="text" id="postOffice" placeholder="e.g., Rampur P.O." required>
-            </div>
-            <div class="input-group">
-                <label for="policeStation">Police Station (P.S.)</label>
-                <input type="text" id="policeStation" placeholder="e.g., Sadar Police Station" required>
-            </div>
-            <div class="input-group">
-                <label for="district">District</label>
-                <input type="text" id="district" placeholder="e.g., Lucknow / Patna" required>
-            </div>
-            <div class="input-group">
-                <label for="state">State</label>
-                <select id="state" required>
-                    <option value="">Select State</option>
-                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Ladakh">Ladakh</option>
-                    <option value="Lakshadweep">Lakshadweep</option>
-                    <option value="Madhya Pradesh">Madhya Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <option value="Odisha">Odisha</option>
-                    <option value="Puducherry">Puducherry</option>
-                    <option value="Punjab">Punjab</option>
-                    <option value="Rajasthan">Rajasthan</option>
-                    <option value="Sikkim">Sikkim</option>
-                    <option value="Tamil Nadu">Tamil Nadu</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Tripura">Tripura</option>
-                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    <option value="Uttarakhand">Uttarakhand</option>
-                    <option value="West Bengal">West Bengal</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="pinCode">PIN Code</label>
-                <input type="number" id="pinCode" placeholder="6-digit code" required>
-            </div>
-            <button type="button" class="btn next-btn">Next</button>
-        </div>
-
-        <div class="form-step" id="step2">
-            <h2>Step 2: Work Experience & Type</h2>
-            <div class="input-group">
-                <label for="employmentType">Employment Type</label>
-                <select id="employmentType">
-                    <option value="Full-time">Full-time</option>
-                    <option value="Part-time">Part-time</option>
-                    <option value="Contract">Contract</option>
-                    <option value="Freelance">Freelance</option>
-                    <option value="Internship">Internship</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="jobTitle">Current/Last Job Title</label>
-                <input type="text" id="jobTitle" required>
-            </div>
-            <div class="input-group">
-                <label for="companyName">Company Name</label>
-                <input type="text" id="companyName" required>
-            </div>
-            <div class="input-group">
-                <label for="experience">Years of Experience</label>
-                <input type="number" id="experience" min="0" required>
-            </div>
-            <div class="input-group">
-                <label for="responsibilities">Key Responsibilities</label>
-                <textarea id="responsibilities" rows="3" placeholder="A brief summary of what you do/did."></textarea>
-            </div>
-            <div class="input-group">
-                <label for="noticePeriod">Notice Period</label>
-                <select id="noticePeriod">
-                    <option value="Immediate">Immediate</option>
-                    <option value="15 Days">15 Days</option>
-                    <option value="1 Month">1 Month</option>
-                    <option value="2 Months+">2 Months+</option>
-                </select>
-            </div>
-            <div class="btns-group">
-                <button type="button" class="btn prev-btn">Previous</button>
-                <button type="button" class="btn next-btn">Next</button>
-            </div>
-        </div>
-
-        <div class="form-step" id="step3">
-            <h2>Step 3: Education & Documentation</h2>
-            <div class="input-group">
-                <label for="qualification">Highest Qualification</label>
-                <input type="text" id="qualification" placeholder="e.g., Bachelors, Masters, PhD" required>
-            </div>
-            <div class="input-group">
-                <label for="institution">Institution/University</label>
-                <input type="text" id="institution" required>
-            </div>
-            <div class="input-group">
-                <label for="yearOfPassing">Year of Passing</label>
-                <input type="number" id="yearOfPassing" placeholder="YYYY" min="1900" max="2099" required>
-            </div>
-            <div class="input-group">
-                <label for="profileImage">Profile Image (JPG/PNG, <5MB)</label>
-                <input type="file" id="profileImage" accept="image/jpeg, image/png">
-            </div>
-            <div class="input-group">
-                <label for="aadhaarCard">Aadhaar Card (PDF/Image, <5MB)</label>
-                <input type="file" id="aadhaarCard" accept=".pdf, image/*">
-            </div>
-            <div class="input-group">
-                <label for="resume">Updated CV/Resume (PDF/Docx, <5MB)</label>
-                <input type="file" id="resume" accept=".pdf, .doc, .docx">
-            </div>
-            <div class="input-group">
-                <label for="signature">Digital Signature</label>
-                <canvas id="signature-canvas" width="400" height="150"></canvas>
-                <button type="button" id="clear-signature" class="btn">Clear</button>
-            </div>
-            <div class="btns-group">
-                <button type="button" class="btn prev-btn">Previous</button>
-                <button type="submit" class="btn submit-btn">Submit</button>
-            </div>
-        </div>
-    </form>
-</div>
-
-<script src="application.js"></script>
+            <button type="submit" class="btn submit-btn">Submit</button>
+        </form>
+    </div>
+    <script src="application.js"></script>
 </body>
 </html>

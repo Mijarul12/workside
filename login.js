@@ -3,74 +3,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const togglePassword = document.querySelector('.toggle-password');
+    const submitBtn = document.querySelector('.login-now-btn');
 
-    const handleLogin = (userType) => {
-        const email = emailInput.value.toLowerCase();
-        const password = passwordInput.value;
-        const deletedEmails = JSON.parse(localStorage.getItem('deletedEmails')) || [];
-        const deletedStudentEmails = JSON.parse(localStorage.getItem('deletedStudentEmails')) || [];
+    // Store credentials in localStorage for demonstration
+    localStorage.setItem('worker_email', 'masumreja472@gmail.com');
+    localStorage.setItem('worker_password', 'Masum!@#$!1');
 
-        if (deletedEmails.includes(email) || deletedStudentEmails.includes(email)) {
-            alert('This user has been deleted and cannot log in.');
-            return;
-        }
-
-        switch (userType) {
-            case 'student':
-                const students = JSON.parse(localStorage.getItem('students')) || [];
-                const student = students.find(s => s.email.toLowerCase() === email && s.password === password);
-                if (student) {
-                    window.location.href = 'dashboard.html';
-                } else {
-                    alert('Invalid student email or password.');
-                }
-                break;
-
-            case 'worker':
-                const workers = JSON.parse(localStorage.getItem('workers')) || [];
-                const worker = workers.find(w => w.email.toLowerCase() === email && w.password === password);
-                if (worker) {
-                    window.location.href = 'worker_dashboard.html';
-                } else {
-                    alert('Invalid worker email or password.');
-                }
-                break;
-
-            case 'admin':
-                if (email === 'admin@gmail.com' && password === 'Admin123') {
-                    window.location.href = 'admin_dashboard.html';
-                } else {
-                    alert('Invalid admin email or password.');
-                }
-                break;
-
-            default:
-                alert('Invalid login type specified.');
-                break;
-        }
-    };
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const path = window.location.pathname;
-
-            if (path.includes('worker_login.html')) {
-                handleLogin('worker');
-            } else if (path.includes('admin_login.html')) {
-                handleLogin('admin');
+    // Toggle Password Visibility
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            if (type === 'text') {
+                togglePassword.classList.remove('fa-eye-slash');
+                togglePassword.classList.add('fa-eye');
             } else {
-                handleLogin('student');
+                togglePassword.classList.remove('fa-eye');
+                togglePassword.classList.add('fa-eye-slash');
             }
         });
     }
 
-    if (togglePassword && passwordInput) {
-        togglePassword.addEventListener('click', function () {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye-slash');
-            this.classList.toggle('fa-eye');
+    // Form Submission with Loading Animation and Authentication
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const enteredEmail = emailInput.value;
+            const enteredPassword = passwordInput.value;
+            
+            const storedEmail = localStorage.getItem('worker_email');
+            const storedPassword = localStorage.getItem('worker_password');
+
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin" style="margin-right: 8px;"></i> Authenticating...';
+            submitBtn.style.opacity = '0.8';
+            submitBtn.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+                    alert('Login Successful! Welcome to your dashboard.');
+                    window.location.href = "worker_dashboard.html";
+                } else {
+                    alert('Invalid email or password. Please try again.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.pointerEvents = 'auto';
+                }
+            }, 1500); 
         });
     }
 });

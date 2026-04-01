@@ -3,124 +3,1280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worker Pro Dashboard</title>
-    <link rel="stylesheet" href="worker_create.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Worker Dashboard - Work Side</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <div class="dashboard-container">
+    <div class="dashboard-wrapper">
         <aside class="sidebar">
-            <div class="logo">WORK<span>FLOW</span></div>
-            <nav>
-                <ul>
-                    <li class="active"><i class="fas fa-home"></i> Dashboard</li>
-                    <li><i class="fas fa-tasks"></i> My Tasks</li>
-                    <li><i class="fas fa-calendar-alt"></i> Schedule</li>
-                    <li><i class="fas fa-chart-line"></i> Performance</li>
-                    <li><i class="fas fa-cog"></i> Settings</li>
-                </ul>
+            <div class="sidebar-header">
+                <h2><span>Work</span>Side</h2>
+                <p>Worker Panel</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-link active" data-target="account-section">
+                    <i class="fa-solid fa-user"></i> My Account
+                </a>
+                <a href="#" class="nav-link" data-target="wallet-section">
+                    <i class="fa-solid fa-wallet"></i> Wallet & Earnings
+                </a>
+                <a href="#" class="nav-link" data-target="product-list-section">
+                    <i class="fa-solid fa-box-open"></i> Product List
+                </a>
+                <a href="#" class="nav-link" data-target="product-upload-section">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Upload Product
+                </a>
+                <a href="#" class="nav-link" data-target="settings-section">
+                    <i class="fa-solid fa-lock"></i> Change Password
+                </a>
             </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </div>
         </aside>
+
         <main class="main-content">
-            <header>
-                <h1>Welcome Back, Worker!</h1>
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="current-page-title">My Account</h1>
+                </div>
                 <div class="user-profile">
-                    <i class="fas fa-bell"></i>
-                    <i class="fas fa-envelope"></i>
-                    <img src="https://i.pravatar.cc/40" alt="User Avatar">
+                    <img src="https://ui-avatars.com/api/?name=Masum+Reja&background=6366f1&color=fff" alt="User Avatar">
+                    <span>Welcome, Masum</span>
                 </div>
             </header>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <h3>125</h3>
-                        <p>Tasks Finished</p>
+
+            <div class="content-container">
+                
+                <section id="account-section" class="content-panel active">
+                    <div class="panel-header">
+                        <h3>Profile Overview</h3>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h3>280</h3>
-                        <p>Total Hours</p>
+                    <div class="panel-body grid-2">
+                        <div class="info-card">
+                            <p class="label">Full Name</p>
+                            <p class="value">Masum Reja</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Email Address</p>
+                            <p class="value">masumreja472@gmail.com</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Join Date</p>
+                            <p class="value">April 2026</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Status</p>
+                            <p class="value status-active">Active</p>
+                        </div>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-rocket"></i>
-                    <div>
-                        <h3>92%</h3>
-                        <p>Efficiency</p>
+                </section>
+
+                <section id="wallet-section" class="content-panel">
+                    <div class="wallet-cards">
+                        <div class="glass-card balance-card">
+                            <h3>Available Balance</h3>
+                            <h2>Rs. 0.00</h2>
+                            <button class="action-btn">Withdraw Funds</button>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <h3>Total Earnings</h3>
+                            <h2>Rs. 0.00</h2>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <h3>Pending Clearance</h3>
+                            <h2>Rs. 0.00</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="stat-card blue">
-                    <i class="fas fa-star"></i>
-                    <div>
-                        <h3>4.8</h3>
-                        <p>Rating</p>
+                </section>
+
+                <section id="product-list-section" class="content-panel">
+                    <div class="panel-header">
+                        <h3>My Uploaded Products</h3>
                     </div>
-                </div>
+                    <div class="table-responsive">
+                        <table class="glass-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="#WS-101">
+                                    <td>#WS-101</td>
+                                    <td>Web Development Template</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-102">
+                                    <td>#WS-102</td>
+                                    <td>Python Data Script</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-103">
+                                    <td>#WS-103</td>
+                                    <td>Product 3</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-104">
+                                    <td>#WS-104</td>
+                                    <td>Product 4</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-105">
+                                    <td>#WS-105</td>
+                                    <td>Product 5</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-106">
+                                    <td>#WS-106</td>
+                                    <td>Product 6</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-107">
+                                    <td>#WS-107</td>
+                                    <td>Product 7</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-108">
+                                    <td>#WS-108</td>
+                                    <td>Product 8</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-109">
+                                    <td>#WS-109</td>
+                                    <td>Product 9</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-110">
+                                    <td>#WS-110</td>
+                                    <td>Product 10</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-111">
+                                    <td>#WS-111</td>
+                                    <td>Product 11</td>
+                                    <td>Rs. 1099</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-112">
+                                    <td>#WS-112</td>
+                                    <td>Product 12</td>
+                                    <td>Rs. 1199</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-113">
+                                    <td>#WS-113</td>
+                                    <td>Product 13</td>
+                                    <td>Rs. 1299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-114">
+                                    <td>#WS-114</td>
+                                    <td>Product 14</td>
+                                    <td>Rs. 1399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-115">
+                                    <td>#WS-115</td>
+                                    <td>Product 15</td>
+                                    <td>Rs. 1499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-116">
+                                    <td>#WS-116</td>
+                                    <td>Product 16</td>
+                                    <td>Rs. 1599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-117">
+                                    <td>#WS-117</td>
+                                    <td>Product 17</td>
+                                    <td>Rs. 1699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-118">
+                                    <td>#WS-118</td>
+                                    <td>Product 18</td>
+                                    <td>Rs. 1799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-119">
+                                    <td>#WS-119</td>
+                                    <td>Product 19</td>
+                                    <td>Rs. 1899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-120">
+                                    <td>#WS-120</td>
+                                    <td>Product 20</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-121">
+                                    <td>#WS-121</td>
+                                    <td>Product 21</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-122">
+                                    <td>#WS-122</td>
+                                    <td>Product 22</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-123">
+                                    <td>#WS-123</td>
+                                    <td>Product 23</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-124">
+                                    <td>#WS-124</td>
+                                    <td>Product 24</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-125">
+                                    <td>#WS-125</td>
+                                    <td>Product 25</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-126">
+                                    <td>#WS-126</td>
+                                    <td>Product 26</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-127">
+                                    <td>#WS-127</td>
+                                    <td>Product 27</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-128">
+                                    <td>#WS-128</td>
+                                    <td>Product 28</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-129">
+                                    <td>#WS-129</td>
+                                    <td>Product 29</td>
+                                    <td>Rs. 1099</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-130">
+                                    <td>#WS-130</td>
+                                    <td>Product 30</td>
+                                    <td>Rs. 1199</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-131">
+                                    <td>#WS-131</td>
+                                    <td>Product 31</td>
+                                    <td>Rs. 1299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-132">
+                                    <td>#WS-132</td>
+                                    <td>Product 32</td>
+                                    <td>Rs. 1399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-133">
+                                    <td>#WS-133</td>
+                                    <td>Product 33</td>
+                                    <td>Rs. 1499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-134">
+                                    <td>#WS-134</td>
+                                    <td>Product 34</td>
+                                    <td>Rs. 1599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-135">
+                                    <td>#WS-135</td>
+                                    <td>Product 35</td>
+                                    <td>Rs. 1699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-136">
+                                    <td>#WS-136</td>
+                                    <td>Product 36</td>
+                                    <td>Rs. 1799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-137">
+                                    <td>#WS-137</td>
+                                    <td>Product 37</td>
+                                    <td>Rs. 1899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-138">
+                                    <td>#WS-138</td>
+                                    <td>Product 38</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-139">
+                                    <td>#WS-139</td>
+                                    <td>Product 39</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-140">
+                                    <td>#WS-140</td>
+                                    <td>Product 40</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-141">
+                                    <td>#WS-141</td>
+                                    <td>Product 41</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-142">
+                                    <td>#WS-142</td>
+                                    <td>Product 42</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-143">
+                                    <td>#WS-143</td>
+                                    <td>Product 43</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-144">
+                                    <td>#WS-144</td>
+                                    <td>Product 44</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-145">
+                                    <td>#WS-145</td>
+                                    <td>Product 45</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-146">
+                                    <td>#WS-146</td>
+                                    <td>Product 46</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-147">
+                                    <td>#WS-147</td>
+                                    <td>Product 47</td>
+                                    <td>Rs. 1099</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-148">
+                                    <td>#WS-148</td>
+                                    <td>Product 48</td>
+                                    <td>Rs. 1199</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-149">
+                                    <td>#WS-149</td>
+                                    <td>Product 49</td>
+                                    <td>Rs. 1299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-150">
+                                    <td>#WS-150</td>
+                                    <td>Product 50</td>
+                                    <td>Rs. 1399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-151">
+                                    <td>#WS-151</td>
+                                    <td>Product 51</td>
+                                    <td>Rs. 1499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-152">
+                                    <td>#WS-152</td>
+                                    <td>Product 52</td>
+                                    <td>Rs. 1599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-153">
+                                    <td>#WS-153</td>
+                                    <td>Product 53</td>
+                                    <td>Rs. 1699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-154">
+                                    <td>#WS-154</td>
+                                    <td>Product 54</td>
+                                    <td>Rs. 1799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-155">
+                                    <td>#WS-155</td>
+                                    <td>Product 55</td>
+                                    <td>Rs. 1899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-156">
+                                    <td>#WS-156</td>
+                                    <td>Product 56</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-157">
+                                    <td>#WS-157</td>
+                                    <td>Product 57</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-158">
+                                    <td>#WS-158</td>
+                                    <td>Product 58</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-159">
+                                    <td>#WS-159</td>
+                                    <td>Product 59</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-160">
+                                    <td>#WS-160</td>
+                                    <td>Product 60</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-161">
+                                    <td>#WS-161</td>
+                                    <td>Product 61</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-162">
+                                    <td>#WS-162</td>
+                                    <td>Product 62</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-163">
+                                    <td>#WS-163</td>
+                                    <td>Product 63</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-164">
+                                    <td>#WS-164</td>
+                                    <td>Product 64</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-165">
+                                    <td>#WS-165</td>
+                                    <td>Product 65</td>
+                                    <td>Rs. 1099</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-166">
+                                    <td>#WS-166</td>
+                                    <td>Product 66</td>
+                                    <td>Rs. 1199</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-167">
+                                    <td>#WS-167</td>
+                                    <td>Product 67</td>
+                                    <td>Rs. 1299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-168">
+                                    <td>#WS-168</td>
+                                    <td>Product 68</td>
+                                    <td>Rs. 1399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-169">
+                                    <td>#WS-169</td>
+                                    <td>Product 69</td>
+                                    <td>Rs. 1499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-170">
+                                    <td>#WS-170</td>
+                                    <td>Product 70</td>
+                                    <td>Rs. 1599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-171">
+                                    <td>#WS-171</td>
+                                    <td>Product 71</td>
+                                    <td>Rs. 1699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-172">
+                                    <td>#WS-172</td>
+                                    <td>Product 72</td>
+                                    <td>Rs. 1799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-173">
+                                    <td>#WS-173</td>
+                                    <td>Product 73</td>
+                                    <td>Rs. 1899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-174">
+                                    <td>#WS-174</td>
+                                    <td>Product 74</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-175">
+                                    <td>#WS-175</td>
+                                    <td>Product 75</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-176">
+                                    <td>#WS-176</td>
+                                    <td>Product 76</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-177">
+                                    <td>#WS-177</td>
+                                    <td>Product 77</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-178">
+                                    <td>#WS-178</td>
+                                    <td>Product 78</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-179">
+                                    <td>#WS-179</td>
+                                    <td>Product 79</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-180">
+                                    <td>#WS-180</td>
+                                    <td>Product 80</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-181">
+                                    <td>#WS-181</td>
+                                    <td>Product 81</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-182">
+                                    <td>#WS-182</td>
+                                    <td>Product 82</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-183">
+                                    <td>#WS-183</td>
+                                    <td>Product 83</td>
+                                    <td>Rs. 1099</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-184">
+                                    <td>#WS-184</td>
+                                    <td>Product 84</td>
+                                    <td>Rs. 1199</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-185">
+                                    <td>#WS-185</td>
+                                    <td>Product 85</td>
+                                    <td>Rs. 1299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-186">
+                                    <td>#WS-186</td>
+                                    <td>Product 86</td>
+                                    <td>Rs. 1399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-187">
+                                    <td>#WS-187</td>
+                                    <td>Product 87</td>
+                                    <td>Rs. 1499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-188">
+                                    <td>#WS-188</td>
+                                    <td>Product 88</td>
+                                    <td>Rs. 1599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-189">
+                                    <td>#WS-189</td>
+                                    <td>Product 89</td>
+                                    <td>Rs. 1699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-190">
+                                    <td>#WS-190</td>
+                                    <td>Product 90</td>
+                                    <td>Rs. 1799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-191">
+                                    <td>#WS-191</td>
+                                    <td>Product 91</td>
+                                    <td>Rs. 1899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-192">
+                                    <td>#WS-192</td>
+                                    <td>Product 92</td>
+                                    <td>Rs. 1999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-193">
+                                    <td>#WS-193</td>
+                                    <td>Product 93</td>
+                                    <td>Rs. 299</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-194">
+                                    <td>#WS-194</td>
+                                    <td>Product 94</td>
+                                    <td>Rs. 399</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-195">
+                                    <td>#WS-195</td>
+                                    <td>Product 95</td>
+                                    <td>Rs. 499</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-196">
+                                    <td>#WS-196</td>
+                                    <td>Product 96</td>
+                                    <td>Rs. 599</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-197">
+                                    <td>#WS-197</td>
+                                    <td>Product 97</td>
+                                    <td>Rs. 699</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-198">
+                                    <td>#WS-198</td>
+                                    <td>Product 98</td>
+                                    <td>Rs. 799</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-199">
+                                    <td>#WS-199</td>
+                                    <td>Product 99</td>
+                                    <td>Rs. 899</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="#WS-200">
+                                    <td>#WS-200</td>
+                                    <td>Product 100</td>
+                                    <td>Rs. 999</td>
+                                    <td><span class="badge warning">Review</span></td>
+                                    <td class="action-cell">
+                                        <button class="action-btn accept-btn">Accept</button>
+                                        <button class="action-btn reject-btn">Reject</button>
+                                        <button class="action-btn download-btn hidden">Download PDF</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="product-upload-section" class="content-panel">
+                    <div class="panel-header">
+                        <h3>Add New Product</h3>
+                    </div>
+                    <form class="glass-form">
+                        <div class="form-group">
+                            <label>Product Title</label>
+                            <input type="text" placeholder="e.g. Graphic Design Assets" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Price (Rs.)</label>
+                                <input type="number" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select>
+                                    <option>IT & Software</option>
+                                    <option>Design</option>
+                                    <option>Documents</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea rows="4" placeholder="Describe your product..."></textarea>
+                        </div>
+                        <div class="form-group file-upload-zone">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <p>Drag & Drop files here or <span>browse</span></p>
+                        </div>
+                        <button type="submit" class="submit-btn">Upload Product</button>
+                    </form>
+                </section>
+
+                <section id="settings-section" class="content-panel">
+                    <div class="panel-header">
+                        <h3>Security Settings</h3>
+                    </div>
+                    <form class="glass-form secure-form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" placeholder="Enter current password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" placeholder="Enter new password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" placeholder="Confirm new password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Update Password</button>
+                    </form>
+                </section>
+
             </div>
-            <section class="task-section">
-                <h2>Current Projects</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Project Name</th>
-                            <th>Deadline</th>
-                            <th>Status</th>
-                            <th>Progress</th>
-                            <th>Assigned by</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Website Redesign</td>
-                            <td>2024-08-15</td>
-                            <td><span class="status-tag active">Active</span></td>
-                            <td>
-                                <div class="progress-bar">
-                                    <div style="width: 75%;"></div>
-                                </div>
-                            </td>
-                            <td>Jane Doe</td>
-                        </tr>
-                        <tr>
-                            <td>Mobile App UI</td>
-                            <td>2024-09-01</td>
-                            <td><span class="status-tag active">Active</span></td>
-                            <td>
-                                <div class="progress-bar">
-                                    <div style="width: 40%;"></div>
-                                </div>
-                            </td>
-                            <td>John Smith</td>
-                        </tr>
-                        <tr>
-                            <td>Marketing Campaign</td>
-                            <td>2024-07-30</td>
-                            <td><span class="status-tag pending">Pending</span></td>
-                            <td>
-                                <div class="progress-bar">
-                                    <div style="width: 10%;"></div>
-                                </div>
-                            </td>
-                            <td>Alice Johnson</td>
-                        </tr>
-                        <tr>
-                            <td>API Integration</td>
-                            <td>2024-08-20</td>
-                            <td><span class="status-tag active">Active</span></td>
-                            <td>
-                                <div class="progress-bar">
-                                    <div style="width: 60%;"></div>
-                                </div>
-                            </td>
-                            <td>Mike Brown</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
         </main>
     </div>
+
+    <script src="dashboard.js"></script>
 </body>
 </html>
