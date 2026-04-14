@@ -5,76 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Side</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+    <div class="bg-glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
     <header>
-        <div class="logo">
-            <a href="index.html"><span>Work</span>Side</a>
+        <div class="glass-nav">
+            <div class="container">
+                <a href="index.html" class="logo">Work Side</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="btn btn-primary" id="worker-portal-btn">Worker Portal</a>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#services">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="worker_login.html">Login</a>
-        </nav>
     </header>
 
     <main>
-        <section class="welcome">
-            <div class="welcome-text">
-                <h1>Welcome to Work Side</h1>
-                <p>Workside.shop is a versatile digital platform serving as a bridge for career and academic success. For students, it provides essential tools and project inspiration for assignments, simplifying complex research. For workers, it offers resources for professional skill-building and efficient task management. By blending practical training with digital convenience, the site empowers users to enhance their productivity, refine their technical skills, and achieve their goals in a modern workspaces.</p>
-                <a href="application.html"><button class="gradient-btn">Registration</button></a>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to <span class="gradient-text">Work Side</span></h1>
+                    <p>India's #1 IT training & career services provider for students and professionals. Get your hands on our flagship programs that have helped 1500+ students & professionals to get their first IT job.</p>
+                    <div class="hero-buttons">
+                        <a href="services.html" class="btn btn-primary">Explore Programs</a>
+                        <a href="masterclass-application.html" class="btn btn-secondary">Free Masterclass</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="ticker">
-            <span class="ticker-text">It is an affordable, Indian-based resource hub (as indicated by the "Rs" currency) for individuals looking to boost their IT skills or find ready-made inspiration for academic and professional projects.</span>
-        </div>
+        <section class="stats">
+            <div class="container">
+                <div class="stat-item">
+                    <h3>1500+</h3>
+                    <p>Students Placed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Hiring Partners</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8/5</h3>
+                    <p>Google Reviews</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="container">
-            <section class="content">
-                <h2 class="card-group-heading">Our Valuable Certification Courses</h2>
-                <div class="cards course-cards">
-                    <div class="card digital-marketing-card">
+        <section class="flagship-programs">
+            <div class="container">
+                <h2>Our Flagship Programs</h2>
+                <div class="program-cards">
+                    </div>
+            </div>
+        </section>
+
+        <section class="expert-services">
+            <div class="container">
+                <h2>Expert Services</h2>
+                <p>We also provide other expert services that will help you to land your dream job</p>
+                <div class="service-cards">
+                    </div>
+            </div>
+        </section>
+
+        <section class="certification-courses">
+            <div class="container">
+                <h2>Our Valuable Certification Courses</h2>
+                <div class="course-cards">
+                    <div class="course-card">
                         <h3>Digital Marketing</h3>
-                        <p class="course-description">
-                            <strong>Price:</strong> Rs-1265/1y-<br><br>
-                            <strong>Social Media Marketing:</strong> Creating pages and basic ads on Facebook, Instagram, and WhatsApp Business.<br>
-                            <strong>Search Engine Optimization (SEO):</strong> The basics of how to make a website show up on Google.<br>
-                            <strong>Content Creation:</strong> Using free tools like Canva for graphics and basic video editing for Reels/YouTube.<br>
-                            <strong>E-commerce Basics:</strong> How to list products on platforms like Amazon, Flipkart, or local "e-mandis."
-                        </p>
-                        <a href="digital-marketing-application.html" class="gradient-btn">BOOK NOW</a>
+                        <p>Price: Rs-1265/1y-</p>
+                        <ul>
+                            <li>Social Media Marketing: Creating pages and basic ads on Facebook, Instagram, and WhatsApp Business.</li>
+                            <li>Search Engine Optimization (SEO): The basics of how to make a website show up on Google.</li>
+                            <li>Content Creation: Using free tools like Canva for graphics and basic video editing for Reels/YouTube.</li>
+                            <li>E-commerce Basics: How to list products on platforms like Amazon, Flipkart, or local "e-mandis."</li>
+                        </ul>
+                        <a href="digital-marketing-application.html" class="btn btn-primary">BOOK NOW</a>
                     </div>
-                    <div class="card computer-operator-card">
+                    <div class="course-card">
                         <h3>Basic Computer Course (BCC)</h3>
-                        <p class="course-description">
-                            <strong>Price:</strong> Rs-2999/- <br><br>
-                            <strong>Course Duration:</strong> 1 Year (Diploma level)<br>
-                            <strong>Fundamentals:</strong> Computer hardware and software basics.<br>
-                            <strong>Operating Systems:</strong> Windows 10/11 basics.<br>
-                            <strong>MS Office:</strong> Word (typing), Excel (data), and PowerPoint (presentations).<br>
-                            <strong>Internet:</strong> Email, online banking, and government portal usage (e-Mitra, DigiLocker).<br>
-                        </p>
-                        <a href="bcc-application.html" class="gradient-btn">BOOK NOW</a>
+                        <p>Price: Rs-2999/-</p>
+                        <p>Course Duration: 1 Year (Diploma level)</p>
+                        <ul>
+                            <li>Fundamentals: Computer hardware and software basics.</li>
+                            <li>Operating Systems: Windows 10/11 basics.</li>
+                            <li>MS Office: Word (typing), Excel (data), and PowerPoint (presentations).</li>
+                            <li>Internet: Email, online banking, and government portal usage (e-Mitra, DigiLocker).</li>
+                        </ul>
+                        <a href="bcc-application.html" class="btn btn-primary">BOOK NOW</a>
                     </div>
-                    <div class="card ethical-hacking-card">
+                    <div class="course-card">
                         <h3>Ethical Hacking</h3>
-                        <p class="course-description">
-                            <strong>Price:</strong> Rs-9998/1y-<br>
-                            <strong>Course Duration:</strong> 1 Year (Diploma level)<br><br>
-                            <strong>Web App Hacking:</strong> OWASP Top 10 vulnerabilities (SQL Injection, XSS, etc.).<br>
-                            <strong>System Hacking:</strong> Password cracking and privilege escalation.<br>
-                            <strong>AI in Hacking:</strong> (New for 2026) Using AI tools for automated vulnerability scanning and threat detection.
-                        </p>
-                        <a href="ethical-hacking-application.html" class="gradient-btn">BOOK NOW</a>
+                        <p>Price: Rs-9998/1y-</p>
+                        <p>Course Duration: 1 Year (Diploma level)</p>
+                        <ul>
+                            <li>Web App Hacking: OWASP Top 10 vulnerabilities (SQL Injection, XSS, etc.).</li>
+                            <li>System Hacking: Password cracking and privilege escalation.</li>
+                            <li>AI in Hacking: (New for 2026) Using AI tools for automated vulnerability scanning and threat detection.</li>
+                        </ul>
+                        <a href="ethical-hacking-application.html" class="btn btn-primary">BOOK NOW</a>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h2 class="card-group-heading">GoalBest Certification</h2>
-                <table class="certification-table">
+        <section class="goalbest-certification">
+            <div class="container">
+                <h2>GoalBest Certification</h2>
+                <table>
                     <thead>
                         <tr>
                             <th>Get any IT job fast</th>
@@ -105,72 +154,30 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
 
-                <h2 id="services" class="card-group-heading">Our Services</h2>
-                <div class="cards service-cards">
-                    <div class="card">
-                        <h3>Udyam Registration</h3>
-                        <p>Rs-299/-</p>
-                        <a href="udyam-registration.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class="card">
-                        <h3>GST Registration</h3>
-                        <p>Rs-499/-</p>
-                        <a href="gst-registration.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class="card">
-                        <h3>Trade License</h3>
-                        <p>Rs-599/-</p>
-                        <a href="trade-license.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class="card">
-                        <h3>Create Website</h3>
-                        <p>Starting at Rs-1999/-</p>
-                        <a href="customer-request.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class="card">
-                        <h3>ITR Filing</h3>
-                        <p>Starting at Rs-1999/-</p>
-                        <a href="itr-filing.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class.card">
-                        <h3>Gumasta License</h3>
-                        <p>Rs-299/-</p>
-                        <a href="gumasta-license.html" class="gradient-btn">Apply</a>
-                    </div>
-                    <div class="card">
-                        <h3>Ticket Booking</h3>
-                        <p>Starting at Rs-99/-</p>
-                        <a href="https://rahabar-in.netlify.app/" class="gradient-btn">Book Now</a>
-                    </div>
-                </div>
-            </section>
-        </div>
     </main>
 
     <footer>
-        <a href="terms.html">Term & Condition</a>
-        <p>&copy; 2026 Work Side. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Work Side. All rights reserved.</p>
+        </div>
     </footer>
-    
-    <button id="backToTopBtn" class="gradient-btn">&#8679;</button>
 
-    <script src="razorpay.js"></script>
-    <script>
-        const backToTopBtn = document.getElementById('backToTopBtn');
+    <!-- Worker Portal Modal -->
+    <div id="worker-portal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Enter Your Secret Key</h2>
+            <p>Please enter your 6-digit secret key to access the worker portal.</p>
+            <input type="password" id="secret-key-input" maxlength="6" placeholder="______">
+            <button id="confirm-key-btn" class="btn-primary">Confirm</button>
+            <p id="modal-error" class="error-message" style="display: none;">Invalid secret key. Please try again.</p>
+        </div>
+    </div>
 
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        };
-
-        backToTopBtn.onclick = function() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
-    </script>
+    <script src="main.js"></script>
+    <script src="3d.js"></script>
 </body>
 </html>

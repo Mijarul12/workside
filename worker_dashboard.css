@@ -1,4 +1,443 @@
-/* Worker Dashboard Specific Styles */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* You can add specific styles for the worker dashboard here if needed */
-/* For now, it will use the same general dashboard styles */
+:root {
+    --primary-color: #4f46e5;
+    --sidebar-bg: #111827;
+    --sidebar-hover: #1f2937;
+    --bg-color: #f3f4f6;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --white: #ffffff;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --info-color: #3b82f6;
+    --warning-color: #f59e0b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid #374151;
+    color: var(--primary-color);
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.menu-item {
+    padding: 15px 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #d1d5db;
+    text-decoration: none;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: var(--sidebar-hover);
+    color: var(--white);
+    border-left: 4px solid var(--primary-color);
+}
+
+.menu-item i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dropdown Styles */
+.dropdown-container {
+    display: none; /* Hidden by default */
+    background-color: #030712;
+    flex-direction: column;
+}
+
+.dropdown-container a {
+    padding: 12px 24px 12px 55px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.dropdown-container a:hover {
+    color: var(--white);
+    background-color: #1f2937;
+}
+
+.has-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Topbar */
+.topbar {
+    background-color: var(--white);
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.topbar-left {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-icon {
+    font-size: 16px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-icon:hover {
+    color: var(--primary-color);
+}
+
+.topbar-icon i {
+    margin-right: 8px;
+}
+
+.wallet-badge, .pending-badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.wallet-badge {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.pending-badge {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#session-timer span {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+
+/* Dashboard Body */
+.dashboard-body {
+    padding: 30px;
+}
+
+/* Cards */
+.cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.card-info h2 {
+    font-size: 24px;
+    color: var(--text-main);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.bg-blue { background: #e0e7ff; color: #4f46e5; }
+.bg-green { background: #d1fae5; color: #10b981; }
+.bg-yellow { background: #fef3c7; color: #f59e0b; }
+
+/* Transactions Table */
+.table-container {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.table-container h3 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+td {
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status.completed { background: #d1fae5; color: #065f46; }
+.status.pending { background: #fef3c7; color: #92400e; }
+
+/* Notifications Popup */
+.notifications-popup {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    width: 360px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Wallet Modal Styles */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1000; /* Puts it on top of everything */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px); /* Slight blur effect */
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #ef4444; /* Turns red on hover */
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-size: 20px;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-add:hover {
+    background-color: #4338ca;
+}
+
+.btn-withdraw {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.btn-withdraw:hover {
+    background-color: #059669;
+}
+
+/* Mock Answer Table Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-download {
+    background-color: var(--info-color);
+    color: var(--white);
+}
+
+.btn-download:hover {
+    background-color: #2563eb;
+}
+
+.btn-accept {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.btn-accept:hover {
+    background-color: #059669;
+}
+
+.btn-reject {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.btn-reject:hover {
+    background-color: #dc2626;
+}
+
+/* Processed Row Styles */
+tr.processed {
+    background-color: #f3f4f6;
+    color: var(--text-muted);
+}
+
+tr.processed .action-buttons strong {
+    color: #059669; /* Green color for "Processed" text */
+    font-weight: 600;
+}

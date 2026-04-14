@@ -3,37 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="application.css">
+    <title>Get Certified | Work Side</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-    <div class="form-container">
-        <form id="registrationForm">
-            <h2>Registration</h2>
-            <div class="input-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="John Doe" required>
-            </div>
-            <div class="input-group">
-                <label for="phone">Mobile Number</label>
-                <input type="tel" id="phone" placeholder="+91 XXXXX-XXXXX" required>
-            </div>
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="name@email.com" required>
-            </div>
-            <div class="input-group">
-                <label for="aadhar">Aadhar Number</label>
-                <input type="text" id="aadhar" placeholder="XXXX XXXX XXXX" required>
-            </div>
-            <div class="input-group">
-                <label for="referCode">Refer Code (Optional)</label>
-                <input type="text" id="referCode" placeholder="Enter referral code">
-            </div>
-            <button type="submit" class="btn submit-btn">Submit</button>
-        </form>
-    </div>
+    <div class="bg-glow"></div>
+
+    <header class="glass-nav">
+        <div class="logo">Work<span>Side</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="worker_login.html" class="nav-cta">Worker Portal</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="application-form-container">
+            <h1>Get Certified</h1>
+            <form class="application-form" id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 XXXXX-XXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="aadhar">Aadhar Number</label>
+                    <input type="text" id="aadhar" placeholder="XXXX XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="referCode">Refer Code (Optional)</label>
+                    <input type="text" id="referCode" placeholder="Enter referral code">
+                </div>
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="minimal-footer">
+        <p>© 2026 WorkSide. All Rights Reserved.</p>
+        <div class="f-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+    </footer>
+
     <script src="application.js"></script>
 </body>
 </html>

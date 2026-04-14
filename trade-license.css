@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    background-color: #0d0c22;
+    color: #ccc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 2rem;
+    background: rgba(18, 16, 41, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #b3b3cc;
+    text-align: center;
+}
+
+/* Details Section */
+.details h2, .details h3 {
+    font-weight: 600;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #8E2DE2;
+    padding-left: 10px;
+}
+
+.details h2 {
+    font-size: 1.8rem;
+}
+
+.details h3 {
+    font-size: 1.4rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 15px;
+    margin-bottom: 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 25px;
+    color: #b3b3cc;
+}
+
+ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #8E2DE2;
+    font-weight: bold;
+}
+
+ul li strong {
+    color: #f0f0f0;
+    font-weight: 600;
+}
+
+/* Agreement & Payment Button */
+.agreement {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#agree-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #8E2DE2;
+}
+
+.agreement label {
+    font-size: 0.9rem;
+    color: #b3b3cc;
+}
+
+#pay-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #5D26C1, #a14eff);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(119, 53, 224, 0.4);
+}
+
+#pay-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(119, 53, 224, 0.6);
+}
+
+#pay-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+}

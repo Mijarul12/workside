@@ -4,56 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udyam Registration - Work Side</title>
-    <link rel="stylesheet" href="agreement.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="application-form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Udyam Registration</h1>
-        <p>Udyam Registration, also known as MSME Registration, is a government registration for micro, small, and medium enterprises. This registration provides your business with a unique identity and access to various government schemes and benefits.</p>
-        <p>Our service helps you to get your Udyam Registration certificate quickly and easily. We handle all the paperwork and online procedures for you.</p>
-        
-        <div class="requirements">
-            <h2>Mandatory Requirements</h2>
-            <p>These are the absolute essentials without which you cannot proceed:</p>
-            
-            <h3>1. Mandatory Requirements</h3>
-            <ul>
-                <li><strong>Aadhaar Number:</strong>
+    <div class="bg-glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="glass-nav">
+            <div class="container">
+                <a href="index.html" class="logo">Work Side</a>
+                <nav>
                     <ul>
-                        <li>For Proprietorship: Aadhaar of the proprietor.</li>
-                        <li>For Partnership: Aadhaar of the Managing Partner.</li>
-                        <li>For Company/LLP: Aadhaar of the Authorized Signatory.</li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
-                </li>
-                <li><strong>PAN Card:</strong> PAN of the organization (or the proprietor's PAN for a single-owner business). PAN is now mandatory for Udyam registration.</li>
-                <li><strong>Active Mobile Number:</strong> To receive the OTP (One-Time Password) linked to your Aadhaar.</li>
-            </ul>
-
-            <h3>2. Business & Banking Details</h3>
-            <p>You will need to enter these specific details into the portal:</p>
-            <ul>
-                <li><strong>Business Address:</strong> Complete address of the plant/unit and the registered office (Village, District, State, PIN Code).</li>
-                <li><strong>Bank Account Details:</strong> Bank Account Number and IFSC Code of the branch.</li>
-                <li><strong>Date of Commencement:</strong> The exact date when your business officially started operating.</li>
-                <li><strong>Investment & Turnover Details:</strong> Previous year's Investment in Plant & Machinery and Total Turnover (Gross sales) for the previous financial year.</li>
-            </ul>
-
-            <h3>3. Classification Details (NIC Codes)</h3>
-            <p>You must identify your business category. The portal uses the National Industrial Classification (NIC) system to categorize your business.</p>
-            <ul>
-                <li><strong>Primary Activity:</strong> Whether you are Manufacturing or Service.</li>
-                <li><strong>NIC 2-digit, 4-digit, and 5-digit codes:</strong> These represent your specific niche (e.g., "Manufacture of apparel" or "IT Services").</li>
-            </ul>
+                </nav>
+                <a href="worker_login.html" class="btn btn-primary">Worker Portal</a>
+            </div>
         </div>
+    </header>
 
-        <div class="agreement">
-            <input type="checkbox" id="agree-checkbox">
-            <label for="agree-checkbox">I agree to the terms and conditions. I understand that the fee of Rs-299/- is non-refundable.</label>
+    <main>
+        <section class="application-form-container">
+            <h1>Udyam Registration</h1>
+            <p>Udyam Registration is the new process for registering Micro, Small, and Medium Enterprises (MSMEs) in India. It provides a permanent registration number and a recognition certificate, enabling access to various government schemes and benefits.</p>
+            <p>Price: Rs-1249/-</p>
+            <form class="application-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <button type="submit" class="btn btn-primary">Apply</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Work Side. All rights reserved.</p>
         </div>
-        <button id="pay-btn" class="blinking-btn" data-plan="Udyam Registration" data-amount="299" disabled>Pay & Continue</button>
-    </div>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="agreement.js"></script>
-    <script src="razorpay.js"></script>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="3d.js"></script>
+    <script src="enroll.js"></script>
 </body>
 </html>

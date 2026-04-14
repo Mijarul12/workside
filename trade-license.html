@@ -4,90 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade License - Work Side</title>
-    <link rel="stylesheet" href="agreement.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="application-form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Trade License</h1>
-        <p>A trade license is a document that permits an individual or a business to operate a business in a particular area. It is issued by the local municipal corporation. Our service simplifies the process of obtaining a trade license for your business.</p>
+    <div class="bg-glow"></div>
+    <canvas id="bg-canvas"></canvas>
 
-        <div class="requirements">
-            <h2>Trade License Requirements</h2>
-
-            <h3>1. Individual & Identity Proofs</h3>
-            <ul>
-                <li>Aadhaar Card of the applicant.</li>
-                <li>PAN Card (Personal PAN for Proprietors, Business PAN for Companies/Firms).</li>
-                <li>Recent Passport Size Photographs of the applicant/partners/directors.</li>
-                <li>Voter ID / Driving License (Secondary ID).</li>
-            </ul>
-
-            <h3>2. Proof of Business Premises</h3>
-            <p>This is the most important set of documents for a Trade License:</p>
-            <ul>
-                <li><strong>If Self-Owned:</strong> Latest Property Tax Receipt OR Sale Deed OR Allotment Letter.</li>
-                <li><strong>If Rented:</strong> Registered Rent Agreement AND a No Objection Certificate (NOC) from the landlord.</li>
-                <li><strong>If Leased:</strong> Lease Deed.</li>
-                <li><strong>Utility Proof:</strong> Latest Electricity Bill or Water Bill (must be in the name of the owner).</li>
-            </ul>
-
-            <h3>3. Business Constitution Documents</h3>
-            <ul>
-                <li><strong>For Partnership Firms:</strong> Partnership Deed.</li>
-                <li><strong>For Companies:</strong> Certificate of Incorporation (COI), Memorandum of Association (MOA), and Articles of Association (AOA).</li>
-                <li><strong>For LLPs:</strong> LLP Agreement.</li>
-            </ul>
-
-            <h3>4. Additional Documents (Industry Specific)</h3>
-            <p>Depending on what your business does, you may need these permits:</p>
-            <ul>
-                <li><strong>Fire NOC:</strong> For restaurants, warehouses, etc.</li>
-                <li><strong>Health Trade License:</strong> For food-related businesses.</li>
-                <li><strong>Pollution NOC:</strong> If your business creates noise or waste.</li>
-                <li><strong>Site Plan:</strong> A layout map of the premises.</li>
-                <li><strong>Udyam/GST Registration:</strong> As supporting business proof.</li>
-            </ul>
-
-            <div class="notes">
-                <h3>Important Tips for Application</h3>
-                <ul>
-                    <li><strong>Validity:</strong> Most Trade Licenses are valid for 1 year and must be renewed annually.</li>
-                    <li><strong>Penalties:</strong> Operating without a license can lead to fines or business closure.</li>
-                    <li><strong>Zoning:</strong> Ensure your business is in a commercial zone.</li>
-                </ul>
+    <header>
+        <div class="glass-nav">
+            <div class="container">
+                <a href="index.html" class="logo">Work Side</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="worker_login.html" class="btn btn-primary">Worker Portal</a>
             </div>
+        </div>
+    </header>
 
-            <div class="contact-form-section">
-                <h3>Have Questions or Facing Issues?</h3>
-                <p>For any problem, <a href="#" id="show-contact-form-link">Contact Us</a>.</p>
-                <div id="contact-form-container" style="display: none;">
-                    <p>Please fill out the form below to get in touch with our team.</p>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="contact-name">Name</label>
-                            <input type="text" id="contact-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" id="contact-submit-btn">Submit Inquiry</button>
-                    </form>
+    <main>
+        <section class="application-form-container">
+            <h1>Trade License</h1>
+            <p>A trade license is a legal document that grants permission to operate a business in a specific area. It is issued by the local municipal corporation and is essential for ensuring that the business complies with local regulations.</p>
+            <p>Price: Rs-1299/-</p>
+            <form class="application-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
                 </div>
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <button type="submit" class="btn btn-primary">Apply</button>
+            </form>
+        </section>
+    </main>
 
-        <div class="agreement">
-            <input type="checkbox" id="agree-checkbox">
-            <label for="agree-checkbox">I agree to the terms and conditions. I understand that the fee of Rs-599/- is non-refundable.</label>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Work Side. All rights reserved.</p>
         </div>
-        <button id="pay-btn" class="blinking-btn" data-plan="Trade License" data-amount="599" data-redirect-url="https://forms.gle/vN5j2Jd6c6NqGYwS8" disabled>Pay & Continue</button>
-    </div>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="agreement.js"></script>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="3d.js"></script>
+    <script src="enroll.js"></script>
 </body>
 </html>
